@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Posts
+{% endblock %}
+
+{% block content %}
+    <h1>All Posts</h1>
+    <!--This is where we display the DB table data:-->
+    <div>
+        <ul>
+            {% for post in posts %} <!--We use posts bc in the views.py file, we are using that name.-->
+                <li>{{post.id}} - {{post.title}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -38,3 +38,16 @@ Install Django dependency
 
         Mac OS: python3 manage.py runserver
         Windows: python|py manage.py runserver 
+
+    ## Step 8
+    Creating django apps
+
+    Both OS: python manage.py startapp NAME_OF_THE_APP (in lowercase)
+    
+
+## Models in Django
+
+When we finish a model structure, we need to run these commands in order:
+
+    1. python manage.py makemigrations
+    2. python manage.py migrate

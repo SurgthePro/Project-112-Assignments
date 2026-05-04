@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include #Include is a Django method
 
-urlpatterns = [
-    path('admin/', admin.site.urls), #This is the parent path, the other ones below this one are children. The order that the urls are placed here is the order they are executed when the server runs pages.
-    path("", include("pages.urls")), #When we create urls inside other files, we need to register them here. We can put inside of url patterns, functions views, class-based views, or another url configuration (here, we are inserting the last type). The include() method serves to search our entire project for pages folder urls, which we will add here in this list.
+urlpatterns = [                      # To handle url routing in a Django application, we create url patterns in a list, and we attach different paths to those views--this is how Django knows which view to fire off when a user visits a url on our website.
+    path('admin/', admin.site.urls), #This is the parent path, the other ones below this one are children. The order that the urls are placed here is the order they are executed when the server runs pages. Here, we can use the path() function, set a url route as its first argument, and assign an associated view--the admin method is a special argument here.
+    path("", include("pages.urls")), #When we create urls inside other files, we need to register them here. We can put inside of url patterns, functions views, class-based views, or another url configuration (here, we are inserting the last type). The include() method serves to search our entire project for pages folder urls, which we will add here in this list. This is the parent, and the children are in the pages (url.py in the pages folder).
+    path('posts/', include('posts.urls')), # Here, we are indicating that all the urls will will be creating begin with posts/ So all the children will have posts/ at the beginning (it's sort of like a lastname.) Example: posts/new or posts/list, etc.
 ]

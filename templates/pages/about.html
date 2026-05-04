@@ -1,5 +1,10 @@
 <!-- Note: Previously, this file had boilerplate html code in it, but subsequently, when we added Jinja, we deleted it, and only left body html elements.-->
 {% extends 'base.html' %}
+{% load static %} <!--This needs to be placed here, after extends. It's required anytime we use a static file in an html page.-->
+
+{% block css %} <!--This is placed above the block title, but it's not mandatory--it can be in a different order.-->
+    <link rel="stylesheet" href="{% static 'css/about.css' %}"> <!--This is because the static folder contains the CSS folders. -->
+{% endblock %}
 
 {% block title %}
     About Page
@@ -7,6 +12,11 @@
 
 {% block content %}
     <h1>About Me</h1>
+    <!-- <img src="" alt="" srcset=""> Here, if we wanted to add an image, we would do similarily what we did below for the js file.-->
     <p>I am a Full Stack Development Student at San Diego Global Knowledge University.</p>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/about.js' %}"></script>
 {% endblock %}
     

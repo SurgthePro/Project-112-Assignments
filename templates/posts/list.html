@@ -4,6 +4,12 @@
     Posts
 {% endblock %}
 
+{% load static %} <!--This needs to be placed here, after extends. It's required anytime we use a static file in an html page.-->
+
+{% block css %} <!--This is placed above the block title, but it's not mandatory--it can be in a different order.-->
+    <link rel="stylesheet" href="{% static 'css/list.css' %}"> <!--This is because the static folder contains the CSS folders. -->
+{% endblock %}
+
 {% block content %}
     <h1>All Posts</h1>
     <!--This is where we display the DB table data:-->
@@ -11,6 +17,7 @@
         <ul>
             {% for post in posts %} <!--We use posts bc in the views.py file, we are using that name.-->
                 <li>{{post.id}} - {{post.title}}</li>
+                <a href="{% url 'post_detail' post.id %}">Continue Reading</a>
             {% endfor %}
         </ul>
     </div>

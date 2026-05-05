@@ -3,12 +3,12 @@ h1{
     width: 50%;
     margin: 25px auto;
 }
-p{
-   text-align: center;
+li{
    margin-top: 5px;
    margin-bottom: 5px;
 }
-img{
-    display: block;
-    margin: auto;
+ul{
+    list-style-position: inside;
+    text-align: center;
+    padding-left: 0;
 }

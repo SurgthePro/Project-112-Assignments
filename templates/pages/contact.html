@@ -1,6 +1,12 @@
 <!-- Note: Previously, this file had boilerplate html code in it, but subsequently, when we added Jinja, we deleted it, and only left body html elements.-->
 {% extends 'base.html' %}
 
+{% load static %} <!--This needs to be placed here, after extends. It's required anytime we use a static file in an html page.-->
+
+{% block css %} <!--This is placed above the block title, but it's not mandatory--it can be in a different order.-->
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}"> <!--This is because the static folder contains the CSS folders. -->
+{% endblock %}
+
 {% block title %}
     Contact Page
 {% endblock %}
@@ -8,5 +14,8 @@
 {% block content %}
 <h1>Contact Me</h1>
     <p>Please don't hesitate to contact me.</p>
+    <p>mmouse@anything.what</p>
+    <p>(999) 555-7777</p>
+    <img src=https://th.bing.com/th?q=Communication+Blue+Icon&w=120&h=120&c=1&rs=1&qlt=70&o=7&cb=1&dpr=1.1&pid=InlineBlock&rm=3&mkt=en-US&cc=US&setlang=en&adlt=moderate&t=1&mw=247" alt="" srcset="">
 {% endblock %}
     

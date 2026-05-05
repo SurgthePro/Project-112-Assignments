@@ -1,11 +1,19 @@
 <!-- Note: Previously, this file had boilerplate html code in it, but subsequently, when we added Jinja, we deleted it, and only left body html elements.-->
 {% extends 'base.html' %}
 
+{% load static %} <!--This needs to be placed here, after extends. It's required anytime we use a static file in an html page.-->
+
+{% block css %} <!--This is placed above the block title, but it's not mandatory--it can be in a different order.-->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"> <!--This is because the static folder contains the CSS folders. -->
+{% endblock %}
+
 {% block title %}
     Home Page
 {% endblock %}
 
 {% block content %}
 <h1>Home Page</h1>
-<p>Hello World! using Jinja Tags.</p>
+<h3>Hello World! Welcome to my BLOG!</h3>
+<p>This is a blog app where we discuss any questions involving web development.</p>
+<img src="https://www.bing.com/th/id/OIP.p3UewOAJ7alTQzE4gyojOQHaEH?w=193&h=135&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="" srcset="">
 {% endblock %}

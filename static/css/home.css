@@ -3,6 +3,9 @@ h1{
     width: 50%;
     margin: 25px auto;
 }
+h3{
+    text-align: center;
+}
 p{
    text-align: center;
    margin-top: 5px;

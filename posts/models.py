@@ -13,7 +13,7 @@ class Post(models.Model):  # OOP  Object Oriented Programming: Where everything 
     def __str__(self): # This is similar to the JS method: toString() It takes this Post object and returns whatever we indicate here as a string. Otherwise, without this line of code, we just get the object #.
         return f"{self.id} - {self.title} by {self.author}"
     
-    def get_absolute_url(self):
+    def get_absolute_url(self):  # Redirect a user wehn we execute a POST request.
         return reverse("post_detail", args=[self.id])
     
     

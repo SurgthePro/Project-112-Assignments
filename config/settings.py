@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'pages',
     'posts',
+    'accounts',
 
 ]
 
@@ -125,3 +126,7 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath("static"))]
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'home'  # Here we want to redirect/send the user to the home page (but they can be redirected to any page), once they log in.
+
+# LOGOUT_REDIRECT_URL = 'home' # Here, you actually have the option  as a web dev not to redirect the user to the home page by merely commenting out this line of code or alternatively by substituting: 'logut' (which would actually be redundant).

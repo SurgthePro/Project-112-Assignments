@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+   Log In
+{% endblock %}
+
+
+{% block content %}
+<h1>Log In</h1>
+<form method="post">
+    {% csrf_token %}  <!--Note: This line of code is mandatory when including a form.-->
+    {{ form.as_p }}   <!-- Note: This line of code (a shortcut method) that automatically renders all the fields of a DJ login form as a series of HTML paragraph (<p>) tags.  Each field in the form (including its label, input element, and any help text) is wrapped in its own <p> element, causing them to display one below the other in a basic, organized structure.-->
+    <input type="submit" value="Log In" class="btn btn-success">
+</form>
+{%  endblock %}

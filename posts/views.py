@@ -13,7 +13,7 @@ class PostListView(ListView):          #This is a new class we are creating here
 class PostDetailView(DetailView):      # GET request --> Single element (object)
     template_name = "posts/detail.html"
     model = Post
-    context_object_name = "single_post"
+    context_object_name = "single_post"      # This (context_object_name) is a relevant attribute of this generic view.
 
                                              # SELECT * FROM expenses WHERE id= # Note: This returns a single object element.
 class PostCreateView(CreateView):            # POST request --> empty form on HTML
@@ -27,14 +27,14 @@ class PostCreateView(CreateView):            # POST request --> empty form on HT
         return super().form_valid(form)
     
 class PostUpdateView(UpdateView): #POST request --> filled form html
-    template_name = "posts/edit.html"
-    model = Post
-    fields = ["title", "subtitle", "body"]
+    template_name = "posts/edit.html"          # This (template_name) is a relevant attribute of this generic view.
+    model = Post                               # This (model) is a relevent attribute of this generic (class-based) view.
+    fields = ["title", "subtitle", "body"]     # This (fields) is a relevant attribute of this generic view.
 
 class PostDeleteView(DeleteView):          # POST Request 
     template_name = "posts/delete.html"
     model = Post
     # success_url attribute allows us to redirect the user if the request was successful.
-    success_url = reverse_lazy("post_list")
+    success_url = reverse_lazy("post_list")    # This (success_url) is a relevant attribute of this generic view.
 
 

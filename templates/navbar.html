@@ -22,6 +22,22 @@
           <a class="nav-link" href="{% url 'post_new' %}">New Post</a>
         </li>
       </ul>
+      <div class="d-flex">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Log In</a> <!--Note: the url comes from the name in the urls.py file in the auth folder.-->
+        </li>
+         <li class="nav-item">
+          <form action="{% url 'logout' %}" method="post">  <!--Here, we are using a form bc the logout function requires a post http method. The action attribute will take the user to the logout page (it will change to that page).-->
+            {% csrf_token %}
+            <input type="submit" value="Log Out" class="nav-link"> <!--Note: This "form" is not really a form--this is why the code snippet: {{ form.as_p }} is not needed.-->
+          </form>
+         </li>
+      </ul>
+      </div>
     </div>
   </div>
 </nav>

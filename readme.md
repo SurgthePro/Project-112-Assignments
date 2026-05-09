@@ -50,4 +50,4 @@ Install Django dependency
 When we finish a model structure, we need to run these commands in order:
 
     1. python manage.py makemigrations
-    2. python manage.py migrate
+    2. python manage.py migrate"# Project-113-Assignments" 

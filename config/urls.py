@@ -23,4 +23,5 @@ urlpatterns = [                      # To handle url routing in a Django applica
     path('posts/', include('posts.urls')), # Here, we are indicating that all the urls will will be creating begin with posts/ So all the children will have posts/ at the beginning (it's sort of like a lastname.) Example: posts/new or posts/list, etc.
     path("accounts/", include("accounts.urls")),
     path("accounts/", include("django.contrib.auth.urls")),  # This line of code was added later, after corresponding template html is created. The specific include method argument passed here was found in the config settings.py file under INSTALLED_APPS.  
+    
 ]

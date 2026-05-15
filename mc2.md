@@ -13,3 +13,7 @@ Create a new folder called posts inside of templates:
     d. Create a new file for the delete.html
     e. Create a new file for the edit.html
 
+    # mini Challlenge 2 (FDSI - PostArc) 5/13/26
+    PostARchivedListView and PostDraftView
+    Create two new class-based views called **  ** Both should inherit from the generic class ListView.  They should display all posts from their statuses.
+

@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %} <!--This needs to be placed here, after extends. It's required anytime we use a static file in an html page.-->
+
+{% block css %} <!--This is placed above the block title, but it's not mandatory--it can be in a different order.-->
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}"> <!--This is because the static folder contains the CSS folders. -->
+{% endblock %}
 
 {% block title %}
     Edit Post
@@ -8,7 +14,8 @@
     <h1>Edit Post</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}   <!--This loads the form-->
+        {{ form|crispy }}   <!--This loads the form-->
         <input type="submit" value="Edit" class="btn btn-secondary">
     </form>
+    <img src="https://th.bing.com/th/id/OIP.TarlkRXXxqjaUA6LNQTD2wAAAA?w=159&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3">
  {% endblock %}

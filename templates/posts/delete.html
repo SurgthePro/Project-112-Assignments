@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block css %} <!--This is placed above the block title, but it's not mandatory--it can be in a different order.-->
+    <link rel="stylesheet" href="{% static 'css/delete.css' %}"> <!--This is because the static folder contains the CSS folders. -->
+{% endblock %}
 
 {% block title %}
     Delete Post
@@ -6,7 +10,8 @@
 
  {% block content %}
     <h1>Delete Post</h1>
-    <p>Are you sure you want to delete<strong>"{{ post.title }}"</strong>?</p>
+    <img src="https://th.bing.com/th/id/OIP.J1HCuk4vhr_OFGCjeN_qlQHaHa?w=183&h=183&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3">  
+     <p>Are you sure you want to delete<strong>"{{ post.title }}"</strong>?</p>
     <form method="post">
         {% csrf_token %}
         <input type="submit" value="Confirm" class="btn btn-danger">

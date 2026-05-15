@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Posts
+    Archived
 {% endblock %}
 
 {% load static %} <!--This needs to be placed here, after extends. It's required anytime we use a static file in an html page.-->
@@ -12,6 +12,9 @@
 
 {% block content %}
     <h1>All Posts</h1>
+    <div>
+    <img src="https://images.pexels.com/photos/265667/pexels-photo-265667.jpeg" alt="image">
+    </div>
     <h2>{{ new_elements }}</h2>
     <!--This is where we display the DB table data:-->
     <div>
@@ -23,5 +26,4 @@
             {% endfor %}
         </ul>
     </div>
-    <img src="https://th.bing.com/th/id/OIP.Y61Z8Oi72X9hDHhlE1G5WgHaHa?w=200&h=200&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3" alt="List Icon">
 {% endblock %}

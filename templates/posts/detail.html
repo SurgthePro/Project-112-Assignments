@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block css %} <!--This is placed above the block title, but it's not mandatory--it can be in a different order.-->
+    <link rel="stylesheet" href="{% static 'css/delete.css' %}"> <!--This is because the static folder contains the CSS folders. -->
+{% endblock %}
 
 {%  block title %}
     Post ID: {{ single_post.id }}
@@ -7,11 +11,13 @@
 {% block content %}
     <h1>Title: {{ single_post.title }}</h1>
     <h3>Subtitle: {{ single_post.subtitle }}</h3>
-    <span><strong>Author: {{single_post.author}}</strong></span>
-    <span>Date Created: {{single_post.created_on}}</span>
+    <span><strong>Author: {{single_post.author}}</strong></span><br>
+    <span>Date Created: {{single_post.created_on}}</span><br>
+    <span>Status: {{ single_post.status }}</span><br>
     <hr/>
     <p>Body: {{ single_post.body }}</p>
     <hr/>
     <a href="{% url 'post_edit' single_post.id %}" class="btn btn-secondary">Edit Post</a>
     <a href="{% url 'post_delete' single_post.id %}" class="btn btn-danger">Delete Post</a>
+    <img src="https://th.bing.com/th/id/OIP.jfi8RvOTFHWvFxNGC2nkEgHaE8?w=259&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3">
 {% endblock %}
